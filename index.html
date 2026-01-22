@@ -1,278 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shreya M | Resume</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreya M | Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    body { background: #f0f0ff; color: #1f2937; }
 
-<style>
-:root{
-  --primary:#ec4899;
-  --secondary:#fce7f3;
-  --accent:#f472b6;
-  --dark:#4a044e;
-  --light:#ffffff;
-}
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #ff6f91, #6c5ce7);
+      text-align: center;
+      padding: 50px 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      object-fit: cover;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
 
-body{
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#fbcfe8,#fdf2f8);
-  color:var(--dark);
-}
+    header img:hover { transform: scale(1.05); }
 
-.container{
-  max-width:1100px;
-  margin:40px auto;
-  background:var(--light);
-  border-radius:18px;
-  box-shadow:0 25px 45px rgba(0,0,0,0.15);
-  overflow:hidden;
-}
+    header h1 { font-size: 2.2rem; color: #fff; margin-bottom: 10px; }
+    header p { font-size: 1.1rem; color: #fff; max-width: 600px; line-height: 1.5; }
 
-/* HEADER */
-header{
-  background:linear-gradient(135deg,#db2777,#f472b6);
-  padding:40px;
-  text-align:center;
-  color:white;
-}
+    /* Layout */
+    .container { display: flex; max-width: 1100px; margin: 30px auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
 
-.profile-pic{
-  width:160px;
-  height:160px;
-  border-radius:50%;
-  border:6px solid white;
-  object-fit:cover;
-  margin-bottom:15px;
-}
+    .sidebar {
+      background: #f9f5f8;
+      width: 250px;
+      padding: 30px 20px;
+      border-right: 1px solid #e0e0e0;
+    }
 
-header h1{
-  font-size:2rem;
-  font-weight:600;
-}
+    .sidebar h2 { font-size: 1.3rem; color: #ff6f91; margin-bottom: 15px; }
+    .sidebar button {
+      display: block;
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border: none;
+      background: #fff;
+      text-align: left;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #6c5ce7;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-header p{
-  font-size:1rem;
-  opacity:0.9;
-}
+    .sidebar button:hover, .sidebar button.active { background: #ff6f91; color: #fff; }
 
-/* CONTENT */
-.content{
-  display:grid;
-  grid-template-columns:280px 1fr;
-}
+    .content {
+      flex: 1;
+      padding: 40px 30px;
+    }
 
-/* LEFT PANEL */
-.left{
-  background:var(--secondary);
-  padding:25px;
-}
+    .content h2 { color: #ff6f91; font-size: 1.8rem; margin-bottom: 15px; border-bottom: 2px solid #ff6f91; display: inline-block; padding-bottom: 5px; }
+    .content ul { list-style: disc; padding-left: 20px; margin-top: 10px; }
+    .content li { margin-bottom: 8px; font-size: 1em; }
 
-.left h2{
-  color:#be185d;
-  font-size:1.1rem;
-  margin-bottom:12px;
-}
+    .tag {
+      display: inline-block;
+      background: #6c5ce7;
+      color: #fff;
+      padding: 6px 12px;
+      margin: 6px 6px 0 0;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: background 0.3s;
+    }
+    .tag:hover { background: #ff6f91; }
 
-.left p{
-  font-size:0.9rem;
-  margin-bottom:8px;
-}
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1f5f9;
+      font-size: 0.95rem;
+      color: #6b7280;
+    }
+    footer a { color: #ff6f91; text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
 
-/* RIGHT PANEL */
-.right{
-  padding:30px 40px;
-}
-
-/* ACCORDION */
-.accordion{
-  border-bottom:1px solid #f9a8d4;
-}
-
-.accordion-header{
-  padding:15px 0;
-  font-weight:600;
-  font-size:1.05rem;
-  color:#be185d;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.accordion-header span{
-  transition:0.3s;
-}
-
-.accordion.active .accordion-header span{
-  transform:rotate(90deg);
-}
-
-.accordion-content{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height 0.4s ease;
-}
-
-.accordion.active .accordion-content{
-  max-height:600px;
-  padding-bottom:15px;
-}
-
-ul{
-  padding-left:20px;
-}
-
-ul li{
-  margin-bottom:8px;
-}
-
-/* TAGS */
-.tag{
-  display:inline-block;
-  background:#fce7f3;
-  color:#9d174d;
-  padding:6px 14px;
-  border-radius:20px;
-  font-size:0.85rem;
-  margin:6px 6px 0 0;
-}
-
-/* FOOTER */
-footer{
-  background:#fdf2f8;
-  padding:20px;
-  text-align:center;
-  font-size:0.9rem;
-}
-
-footer span{
-  font-weight:600;
-  color:#db2777;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .content{grid-template-columns:1fr;}
-}
-</style>
+    /* Responsive */
+    @media(max-width: 900px) {
+      .container { flex-direction: column; }
+      .sidebar { width: 100%; border-right: none; display: flex; overflow-x: auto; }
+      .sidebar button { flex: 1; margin-right: 5px; margin-bottom: 0; white-space: nowrap; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <header>
+    <img src="https://via.placeholder.com/150" alt="Shreya M">
+    <h1>Shreya M</h1>
+    <p>Aspiring Software Developer | BCA Student | Passionate About Web Development & Cloud Computing</p>
+  </header>
 
-<header>
-  <img src="profile.jpg" class="profile-pic" alt="Profile Photo">
-  <h1>Shreya M</h1>
-  <p>BCA Student | Cloud & Python Learner</p>
-</header>
+  <div class="container">
 
-<div class="content">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Sections</h2>
+      <button class="active" onclick="showSection('skills')">Skills</button>
+      <button onclick="showSection('education')">Education</button>
+      <button onclick="showSection('internship')">Internship</button>
+      <button onclick="showSection('projects')">Projects</button>
+      <button onclick="showSection('certifications')">Certifications</button>
+    </div>
 
-<div class="left">
-  <h2>Contact</h2>
-  <p>📞 7019484186</p>
-  <p>✉️ shreyaa4287@gmail.com</p>
-  <p>📍 Bangalore – 560049</p>
+    <!-- Content -->
+    <div class="content">
+      <div id="skills">
+        <h2>Skills</h2>
+        <div class="tag">HTML</div>
+        <div class="tag">CSS</div>
+        <div class="tag">JavaScript</div>
+        <div class="tag">Python</div>
+        <div class="tag">AWS</div>
+        <div class="tag">Bootstrap</div>
+      </div>
 
-  <h2>Languages</h2>
-  <p>English</p>
-  <p>Kannada</p>
-</div>
+      <div id="education" style="display:none;">
+        <h2>Education</h2>
+        <ul>
+          <li>BCA, [Your College Name], 2026</li>
+          <li>12th, [Your School Name], 2023</li>
+          <li>10th, [Your School Name], 2021</li>
+        </ul>
+      </div>
 
-<div class="right">
+      <div id="internship" style="display:none;">
+        <h2>Internship</h2>
+        <ul>
+          <li>IMTDA Infotech Private Limited – Assisted in web development projects using HTML, CSS, JavaScript, and Python</li>
+        </ul>
+      </div>
 
-  <div class="accordion active">
-    <div class="accordion-header">Summary <span>▶</span></div>
-    <div class="accordion-content">
-      <p>
-        Hardworking and quick learner with good communication and teamwork skills.
-        Able to adapt to new situations, solve problems, and complete tasks on time.
-        Enthusiastic and motivated to learn and contribute effectively.
-      </p>
+      <div id="projects" style="display:none;">
+        <h2>Projects</h2>
+        <ul>
+          <li>Portfolio Webpage – HTML, CSS, JavaScript</li>
+          <li>Python Mini Projects – Calculator, To-Do App</li>
+        </ul>
+      </div>
+
+      <div id="certifications" style="display:none;">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Introduction to AWS Cloud Computing</li>
+          <li>Web Development Fundamentals</li>
+          <li>Python Programming Essentials</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="accordion">
-    <div class="accordion-header">Education <span>▶</span></div>
-    <div class="accordion-content">
-      <p><b>Bachelor of Computer Applications (BCA)</b></p>
-      <p>Indus Valley Degree College, Bangalore</p>
-      <p>2023 – 2026</p>
-    </div>
-  </div>
-
-  <div class="accordion">
-    <div class="accordion-header">Skills <span>▶</span></div>
-    <div class="accordion-content">
-      <ul>
-        <li>Communication</li>
-        <li>Teamwork</li>
-        <li>Problem Solving</li>
-        <li>Adaptability</li>
-        <li>Time Management</li>
-        <li>Leadership</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="accordion">
-    <div class="accordion-header">Certifications <span>▶</span></div>
-    <div class="accordion-content">
-      <ul>
-        <li>NSS – National Service Scheme</li>
-        <li>Cloud Computing Course</li>
-        <li>Python – Dream A Dream Foundation</li>
-        <li>Soft Skills – Magic Bus (Reliance Foundation)</li>
-        <li>Sports Certificates – Athletics</li>
-        <li>Workshop on AI & Data Science</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="accordion">
-    <div class="accordion-header">Cloud Projects (AWS & Python) <span>▶</span></div>
-    <div class="accordion-content">
-      <ul>
-        <li>Worked on AWS cloud projects</li>
-        <li>Used EC2 to run applications</li>
-        <li>Stored data in Amazon S3</li>
-        <li>Python used for basic automation</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="accordion">
-    <div class="accordion-header">Career Objective <span>▶</span></div>
-    <div class="accordion-content">
-      <p>
-        To begin my career in a reputable organization where I can enhance my skills,
-        gain knowledge, and grow both professionally and personally.
-      </p>
-    </div>
-  </div>
-
-</div>
-</div>
-
-<footer>
-  Company Name: <span>IMTDA Infotech Private Limited</span>
-</footer>
-
-</div>
+  <footer>
+    Company: <a href="https://www.imtda.com" target="_blank">IMTDA Infotech Private Limited</a>
+  </footer>
 
 <script>
-const accordions=document.querySelectorAll(".accordion");
-accordions.forEach(acc=>{
-  acc.querySelector(".accordion-header").addEventListener("click",()=>{
-    acc.classList.toggle("active");
-  });
-});
+  function showSection(id) {
+    const sections = ['skills','education','internship','projects','certifications'];
+    sections.forEach(sec => {
+      document.getElementById(sec).style.display = (sec===id) ? 'block' : 'none';
+    });
+
+    // Active button highlight
+    const buttons = document.querySelectorAll('.sidebar button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.sidebar button[onclick="showSection('${id}')"]`).classList.add('active');
+  }
 </script>
 
 </body>
