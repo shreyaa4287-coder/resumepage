@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shreya M | Resume</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#ec4899;
+  --secondary:#fce7f3;
+  --accent:#f472b6;
+  --dark:#4a044e;
+  --light:#ffffff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#fbcfe8,#fdf2f8);
+  color:var(--dark);
+}
+
+.container{
+  max-width:1100px;
+  margin:40px auto;
+  background:var(--light);
+  border-radius:18px;
+  box-shadow:0 25px 45px rgba(0,0,0,0.15);
+  overflow:hidden;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#db2777,#f472b6);
+  padding:40px;
+  text-align:center;
+  color:white;
+}
+
+.profile-pic{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:6px solid white;
+  object-fit:cover;
+  margin-bottom:15px;
+}
+
+header h1{
+  font-size:2rem;
+  font-weight:600;
+}
+
+header p{
+  font-size:1rem;
+  opacity:0.9;
+}
+
+/* CONTENT */
+.content{
+  display:grid;
+  grid-template-columns:280px 1fr;
+}
+
+/* LEFT PANEL */
+.left{
+  background:var(--secondary);
+  padding:25px;
+}
+
+.left h2{
+  color:#be185d;
+  font-size:1.1rem;
+  margin-bottom:12px;
+}
+
+.left p{
+  font-size:0.9rem;
+  margin-bottom:8px;
+}
+
+/* RIGHT PANEL */
+.right{
+  padding:30px 40px;
+}
+
+/* ACCORDION */
+.accordion{
+  border-bottom:1px solid #f9a8d4;
+}
+
+.accordion-header{
+  padding:15px 0;
+  font-weight:600;
+  font-size:1.05rem;
+  color:#be185d;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.accordion-header span{
+  transition:0.3s;
+}
+
+.accordion.active .accordion-header span{
+  transform:rotate(90deg);
+}
+
+.accordion-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+}
+
+.accordion.active .accordion-content{
+  max-height:600px;
+  padding-bottom:15px;
+}
+
+ul{
+  padding-left:20px;
+}
+
+ul li{
+  margin-bottom:8px;
+}
+
+/* TAGS */
+.tag{
+  display:inline-block;
+  background:#fce7f3;
+  color:#9d174d;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:0.85rem;
+  margin:6px 6px 0 0;
+}
+
+/* FOOTER */
+footer{
+  background:#fdf2f8;
+  padding:20px;
+  text-align:center;
+  font-size:0.9rem;
+}
+
+footer span{
+  font-weight:600;
+  color:#db2777;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .content{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <img src="profile.jpg" class="profile-pic" alt="Profile Photo">
+  <h1>Shreya M</h1>
+  <p>BCA Student | Cloud & Python Learner</p>
+</header>
+
+<div class="content">
+
+<div class="left">
+  <h2>Contact</h2>
+  <p>📞 7019484186</p>
+  <p>✉️ shreyaa4287@gmail.com</p>
+  <p>📍 Bangalore – 560049</p>
+
+  <h2>Languages</h2>
+  <p>English</p>
+  <p>Kannada</p>
+</div>
+
+<div class="right">
+
+  <div class="accordion active">
+    <div class="accordion-header">Summary <span>▶</span></div>
+    <div class="accordion-content">
+      <p>
+        Hardworking and quick learner with good communication and teamwork skills.
+        Able to adapt to new situations, solve problems, and complete tasks on time.
+        Enthusiastic and motivated to learn and contribute effectively.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Education <span>▶</span></div>
+    <div class="accordion-content">
+      <p><b>Bachelor of Computer Applications (BCA)</b></p>
+      <p>Indus Valley Degree College, Bangalore</p>
+      <p>2023 – 2026</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Skills <span>▶</span></div>
+    <div class="accordion-content">
+      <ul>
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Problem Solving</li>
+        <li>Adaptability</li>
+        <li>Time Management</li>
+        <li>Leadership</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Certifications <span>▶</span></div>
+    <div class="accordion-content">
+      <ul>
+        <li>NSS – National Service Scheme</li>
+        <li>Cloud Computing Course</li>
+        <li>Python – Dream A Dream Foundation</li>
+        <li>Soft Skills – Magic Bus (Reliance Foundation)</li>
+        <li>Sports Certificates – Athletics</li>
+        <li>Workshop on AI & Data Science</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Cloud Projects (AWS & Python) <span>▶</span></div>
+    <div class="accordion-content">
+      <ul>
+        <li>Worked on AWS cloud projects</li>
+        <li>Used EC2 to run applications</li>
+        <li>Stored data in Amazon S3</li>
+        <li>Python used for basic automation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Career Objective <span>▶</span></div>
+    <div class="accordion-content">
+      <p>
+        To begin my career in a reputable organization where I can enhance my skills,
+        gain knowledge, and grow both professionally and personally.
+      </p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  Company Name: <span>IMTDA Infotech Private Limited</span>
+</footer>
+
+</div>
+
+<script>
+const accordions=document.querySelectorAll(".accordion");
+accordions.forEach(acc=>{
+  acc.querySelector(".accordion-header").addEventListener("click",()=>{
+    acc.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>
