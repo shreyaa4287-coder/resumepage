@@ -2,107 +2,165 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Shreya M | Resume</title>
+<title>Shreya M | Professional Resume</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f5f6fa;
+:root{
+  --primary:#4f6ef7;
+  --accent:#ff6fae;
+  --bg:#f4f7ff;
+  --dark:#1f2937;
+  --light:#ffffff;
 }
 
-/* Header */
-.header {
-  text-align: center;
-  padding: 30px;
-  background: #6c5ce7;
-  color: white;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-/* Layout */
-.main {
-  display: flex;
-  width: 90%;
-  margin: 30px auto;
+body{
+  font-family:'Segoe UI', Arial, sans-serif;
+  background:linear-gradient(135deg,#eef2ff,#fdf0f7);
+  color:var(--dark);
 }
 
-/* Sidebar */
-.sidebar {
-  width: 25%;
+/* HEADER */
+.header{
+  text-align:center;
+  padding:50px 20px;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:white;
 }
 
-.sidebar button {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  border: none;
-  background: #dfe6e9;
-  font-size: 16px;
+.header h1{
+  font-size:36px;
 }
 
-.sidebar button:hover {
-  background: #b2bec3;
+.header p{
+  margin-top:10px;
+  font-size:16px;
+  opacity:0.95;
 }
 
-/* Content */
-.content {
-  width: 75%;
-  padding: 20px;
-  background: white;
+/* MAIN CONTAINER */
+.main{
+  width:90%;
+  margin:40px auto;
+  display:flex;
+  background:var(--light);
+  border-radius:16px;
+  box-shadow:0 20px 45px rgba(0,0,0,0.12);
+  overflow:hidden;
 }
 
-/* Sections */
-.section {
-  display: none;
+/* SIDEBAR */
+.sidebar{
+  width:28%;
+  background:#f8f9ff;
+  padding:25px;
 }
 
-.section.active {
-  display: block;
+.sidebar button{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border:none;
+  border-radius:10px;
+  background:var(--light);
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* Line-by-line list */
-.line-list {
-  padding-left: 20px;
+.sidebar button:hover{
+  background:var(--primary);
+  color:white;
+  transform:translateX(6px);
 }
 
-.line-list li {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 16px;
+.sidebar button.active{
+  background:var(--primary);
+  color:white;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-  font-size: 14px;
+/* CONTENT */
+.content{
+  width:72%;
+  padding:35px;
+}
+
+/* SECTIONS */
+.section{
+  display:none;
+  animation:fadeUp 0.4s ease;
+}
+
+.section.active{
+  display:block;
+}
+
+.section h2{
+  color:var(--primary);
+  border-bottom:2px solid #e5e7eb;
+  padding-bottom:8px;
+  margin-bottom:20px;
+}
+
+/* LINE BY LINE LIST */
+.line-list{
+  padding-left:20px;
+}
+
+.line-list li{
+  display:block;
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  color:#555;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Header -->
+<!-- HEADER -->
 <div class="header">
   <h1>Shreya M</h1>
-  <p>Aspiring Software Developer | BCA Student</p>
+  <p>BCA Student | Aspiring Software Developer</p>
 </div>
 
-<!-- Main -->
+<!-- MAIN -->
 <div class="main">
 
-  <!-- Sidebar -->
+  <!-- SIDEBAR -->
   <div class="sidebar">
-    <button onclick="showSection('skills')">Skills</button>
-    <button onclick="showSection('education')">Education</button>
-    <button onclick="showSection('internship')">Internship</button>
-    <button onclick="showSection('projects')">Projects</button>
-    <button onclick="showSection('certifications')">Certifications</button>
+    <button class="active" onclick="showSection('skills',this)">Skills</button>
+    <button onclick="showSection('education',this)">Education</button>
+    <button onclick="showSection('internship',this)">Internship</button>
+    <button onclick="showSection('projects',this)">Projects</button>
+    <button onclick="showSection('certifications',this)">Certifications</button>
   </div>
 
-  <!-- Content -->
+  <!-- CONTENT -->
   <div class="content">
 
     <div id="skills" class="section active">
@@ -120,8 +178,8 @@ footer {
     <div id="education" class="section">
       <h2>Education</h2>
       <ul class="line-list">
-        <li>BCA – 5th Semester</li>
-        <li>NEP (2023–2026)</li>
+        <li>Bachelor of Computer Applications (BCA)</li>
+        <li>5th Semester – NEP (2023–2026)</li>
       </ul>
     </div>
 
@@ -136,8 +194,8 @@ footer {
     <div id="projects" class="section">
       <h2>Projects</h2>
       <ul class="line-list">
-        <li>Resume Webpage</li>
-        <li>Welcome Page using JavaScript</li>
+        <li>Professional Resume Webpage</li>
+        <li>Interactive Welcome Page</li>
       </ul>
     </div>
 
@@ -151,19 +209,24 @@ footer {
   </div>
 </div>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-  Company: IMTDA Infotech Private Limited
+  Company: <strong>IMTDA Infotech Private Limited</strong>
 </footer>
 
 <script>
-function showSection(id) {
-  const sections = document.querySelectorAll('.section');
-  sections.forEach(section => section.classList.remove('active'));
+function showSection(id,btn){
+  document.querySelectorAll('.section').forEach(sec=>{
+    sec.classList.remove('active');
+  });
   document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.sidebar button').forEach(b=>{
+    b.classList.remove('active');
+  });
+  btn.classList.add('active');
 }
 </script>
 
 </body>
 </html>
-
