@@ -2,218 +2,228 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Shreya M | Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
 body{
-  margin:0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background:#f3f4ff;
+  background:linear-gradient(160deg,#020617,#0f172a);
+  color:#fff;
 }
 
-/* HEADER */
-.header{
-  padding:60px 20px;
+/* ===== HEADER ===== */
+header{
+  padding:70px 20px 40px;
   text-align:center;
-  background:linear-gradient(90deg,#f76da4,#7a5af8);
-  color:white;
 }
 
-.header h1{
-  margin:0;
-  font-size:34px;
+header h1{
+  font-size:42px;
+  color:#fb7185;
 }
 
-.header p{
-  margin-top:12px;
-  font-size:15px;
-  opacity:0.95;
+header p{
+  margin-top:8px;
+  font-size:18px;
+  color:#c7d2fe;
 }
 
-/* MAIN CARD */
-.main{
-  width:85%;
-  margin:-40px auto 40px;
-  background:white;
-  border-radius:18px;
-  display:flex;
-  box-shadow:0 15px 35px rgba(0,0,0,0.12);
-  padding:30px;
+/* ===== BUTTON GRID ===== */
+.menu{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:25px 20px;
 }
 
-/* SIDEBAR */
-.sidebar{
-  width:28%;
-  background:#fafaff;
-  border-radius:14px;
-  padding:20px;
-}
-
-.sidebar h3{
-  margin-top:0;
-  color:#ff6fae;
-}
-
-.sidebar button{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
+.menu button{
+  padding:16px;
   border:none;
-  border-radius:10px;
-  background:white;
+  border-radius:16px;
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  font-size:16px;
   cursor:pointer;
-  font-size:15px;
-  text-align:left;
   transition:0.3s;
 }
 
-.sidebar button:hover{
-  background:#ececff;
+.menu button:hover{
+  transform:scale(1.03);
+  background:linear-gradient(135deg,#7c3aed,#a78bfa);
 }
 
-.sidebar button.active{
-  background:#ff6fae;
-  color:white;
+.menu button:last-child{
+  grid-column:span 2;
 }
 
-/* CONTENT */
-.content{
-  width:72%;
-  padding:10px 30px;
-}
-
-.section{
-  display:none;
-}
-
-.section.active{
-  display:block;
-}
-
-.section h2{
-  margin-top:0;
-  color:#ff6fae;
-  border-bottom:2px solid #ffe1ee;
-  padding-bottom:6px;
-}
-
-/* SKILL CHIPS */
-.skills{
-  margin-top:20px;
-}
-
-.skill-chip{
-  display:inline-block;
-  background:#7a5af8;
-  color:white;
-  padding:6px 14px;
+/* ===== ACCORDION CARD ===== */
+.card{
+  margin:15px;
   border-radius:20px;
-  margin:6px 6px 0 0;
-  font-size:14px;
+  background:#1e293b;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
 
-/* LINE LIST */
-.line-list{
-  padding-left:18px;
-  margin-top:15px;
+.card-header{
+  padding:18px 22px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.line-list li{
-  margin-bottom:8px;
+.card-header h2{
+  color:#fb7185;
+  font-size:20px;
 }
 
-/* FOOTER */
+.card-header span{
+  font-size:22px;
+  transition:0.3s;
+}
+
+.card.active .card-header span{
+  transform:rotate(90deg);
+}
+
+/* ===== CONTENT (NO GAP OPEN) ===== */
+.card-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+  padding:0 22px;
+}
+
+.card.active .card-content{
+  max-height:600px;
+  padding:20px 22px 25px;
+}
+
+.card-content p, 
+.card-content li{
+  color:#e5e7eb;
+  line-height:1.7;
+}
+
+.card-content ul{
+  padding-left:20px;
+}
+
+/* ===== FOOTER ===== */
 footer{
   text-align:center;
+  padding:20px;
+  color:#94a3b8;
   font-size:14px;
-  color:#ff6fae;
-  margin-bottom:20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
+<header>
   <h1>Shreya M</h1>
-  <p>Aspiring Software Developer | BCA Student | Passionate About Web Development & Cloud Computing</p>
+  <p>Software Developer | BCA Student</p>
+</header>
+
+<div class="menu">
+  <button onclick="toggleCard(0)">Profile</button>
+  <button onclick="toggleCard(1)">Internship</button>
+  <button onclick="toggleCard(2)">Certificates</button>
+  <button onclick="toggleCard(3)">Education</button>
+  <button onclick="toggleCard(4)">Contact</button>
 </div>
 
-<!-- MAIN -->
-<div class="main">
-
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <h3>Sections</h3>
-    <button class="active" onclick="showSection('skills',this)">Skills</button>
-    <button onclick="showSection('education',this)">Education</button>
-    <button onclick="showSection('internship',this)">Internship</button>
-    <button onclick="showSection('projects',this)">Projects</button>
-    <button onclick="showSection('certifications',this)">Certifications</button>
+<!-- ===== PROFILE ===== -->
+<div class="card">
+  <div class="card-header">
+    <h2>Profile</h2><span>▶</span>
   </div>
-
-  <!-- CONTENT -->
-  <div class="content">
-
-    <div id="skills" class="section active">
-      <h2>Skills</h2>
-      <div class="skills">
-        <span class="skill-chip">HTML</span>
-        <span class="skill-chip">CSS</span>
-        <span class="skill-chip">JavaScript</span>
-        <span class="skill-chip">Python</span>
-        <span class="skill-chip">AWS</span>
-        <span class="skill-chip">Bootstrap</span>
-      </div>
-    </div>
-
-    <div id="education" class="section">
-      <h2>Education</h2>
-      <ul class="line-list">
-        <li>Bachelor of Computer Applications (BCA)</li>
-        <li>5th Semester – NEP (2023–2026)</li>
-      </ul>
-    </div>
-
-    <div id="internship" class="section">
-      <h2>Internship</h2>
-      <ul class="line-list">
-        <li>IMTDA Infotech Private Limited</li>
-        <li>Web Development Intern</li>
-      </ul>
-    </div>
-
-    <div id="projects" class="section">
-      <h2>Projects</h2>
-      <ul class="line-list">
-        <li>Resume Webpage using HTML, CSS & JavaScript</li>
-        <li>GitHub Pages Welcome Page</li>
-      </ul>
-    </div>
-
-    <div id="certifications" class="section">
-      <h2>Certifications</h2>
-      <ul class="line-list">
-        <li>AWS Cloud Basics</li>
-      </ul>
-    </div>
-
+  <div class="card-content">
+    <p>
+      I am a BCA student with interest in web development and software technologies.
+      I am motivated, adaptable, and eager to gain real-world experience.
+    </p>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ===== INTERNSHIP ===== -->
+<div class="card">
+  <div class="card-header">
+    <h2>Internship</h2><span>▶</span>
+  </div>
+  <div class="card-content">
+    <ul>
+      <li>Intern at IMTDA Infotech Private Limited</li>
+      <li>Worked on basic HTML & CSS projects</li>
+      <li>Learned professional work culture</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== CERTIFICATES ===== -->
+<div class="card">
+  <div class="card-header">
+    <h2>Certificates</h2><span>▶</span>
+  </div>
+  <div class="card-content">
+    <ul>
+      <li>AWS Cloud Computing</li>
+      <li>Web Development Basics</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== EDUCATION ===== -->
+<div class="card">
+  <div class="card-header">
+    <h2>Education</h2><span>▶</span>
+  </div>
+  <div class="card-content">
+    <ul>
+      <li>BCA – Pursuing</li>
+      <li>PUC – Completed</li>
+      <li>SSLC – Completed</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div class="card">
+  <div class="card-header">
+    <h2>Contact</h2><span>▶</span>
+  </div>
+  <div class="card-content">
+    <p>Email: yourmail@email.com</p>
+    <p>Phone: +91 XXXXXXXXXX</p>
+    <p>GitHub: github.com/yourusername</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+  </div>
+</div>
+
 <footer>
-  Company: <strong>IMTDA Infotech Private Limited</strong>
+  Company Name: <b>IMTDA Infotech Private Limited</b>
 </footer>
 
 <script>
-function showSection(id,btn){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-
-  document.querySelectorAll('.sidebar button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+function toggleCard(index){
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card,i)=>{
+    if(i === index){
+      card.classList.toggle('active');
+    }else{
+      card.classList.remove('active');
+    }
+  });
 }
 </script>
 
