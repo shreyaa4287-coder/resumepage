@@ -1,68 +1,125 @@
-<div class="content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreya M | Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <!-- SKILLS -->
-  <div class="section active" id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML5 & CSS3 (Responsive Design)</li>
-      <li>Basic JavaScript (DOM)</li>
-      <li>Python Programming (Basics)</li>
-      <li>Git & GitHub Version Control</li>
-      <li>AWS Cloud Fundamentals</li>
-      <li>Logical Thinking & Problem Solving</li>
-    </ul>
+<body>
+
+<header>
+  <h1>Shreya M</h1>
+  <p>Aspiring Software Developer | BCA Student</p>
+</header>
+
+<div class="main">
+
+  <!-- SIDE / TOP MENU -->
+  <div class="menu">
+    <button class="active" onclick="showSection('skills',this)">Skills</button>
+    <button onclick="showSection('education',this)">Education</button>
+    <button onclick="showSection('internship',this)">Internship</button>
+    <button onclick="showSection('projects',this)">Projects</button>
+    <button onclick="showSection('certifications',this)">Certifications</button>
   </div>
 
-  <!-- EDUCATION -->
-  <div class="section" id="education">
-    <h2>Education</h2>
-    <ul>
-      <li>Bachelor of Computer Applications (BCA)</li>
-      <li>Currently pursuing under NEP syllabus</li>
-      <li>Strong foundation in programming</li>
-      <li>Hands-on practical lab experience</li>
-      <li>Mini academic projects completed</li>
-      <li>Focused on software development skills</li>
-    </ul>
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="section active" id="skills">
+      <div class="box">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML5 & CSS3 (Responsive Design)</li>
+          <li>Basic JavaScript</li>
+          <li>Python Programming</li>
+          <li>Git & GitHub</li>
+          <li>AWS Cloud Basics</li>
+          <li>Problem Solving Skills</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="education">
+      <div class="box">
+        <h2>Education</h2>
+        <ul>
+          <li>Bachelor of Computer Applications (BCA)</li>
+          <li>Programming & Web Technologies</li>
+          <li>Hands-on Lab Experience</li>
+          <li>Mini Academic Projects</li>
+          <li>Strong Technical Foundation</li>
+          <li>Focused on Software Development</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="internship">
+      <div class="box">
+        <h2>Internship</h2>
+        <ul>
+          <li>IMTDA Infotech Private Limited</li>
+          <li>Resume & Portfolio Website</li>
+          <li>HTML & CSS Practical Work</li>
+          <li>Professional Workflow Exposure</li>
+          <li>Team Collaboration</li>
+          <li>Industry Learning Experience</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="projects">
+      <div class="box">
+        <h2>Projects</h2>
+        <ul>
+          <li>Personal Resume Website</li>
+          <li>Portfolio Website</li>
+          <li>Responsive Web Pages</li>
+          <li>GitHub Pages Hosting</li>
+          <li>Clean UI Design</li>
+          <li>User-Friendly Layout</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="certifications">
+      <div class="box">
+        <h2>Certifications</h2>
+        <ul>
+          <li>AWS Cloud Basics</li>
+          <li>Web Development Fundamentals</li>
+          <li>HTML & CSS Certification</li>
+          <li>GitHub Basics</li>
+          <li>Cloud Computing Introduction</li>
+          <li>Soft Skills Training</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
-  <!-- INTERNSHIP -->
-  <div class="section" id="internship">
-    <h2>Internship</h2>
-    <ul>
-      <li>Intern at IMTDA Infotech Private Limited</li>
-      <li>Worked on resume & portfolio webpage</li>
-      <li>Practiced HTML and CSS layouts</li>
-      <li>Learned professional workflow</li>
-      <li>Improved teamwork and communication</li>
-      <li>Gained real-time industry exposure</li>
-    </ul>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="section" id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>Personal Resume Website</li>
-      <li>Portfolio Website using HTML & CSS</li>
-      <li>Responsive web pages</li>
-      <li>GitHub Pages hosting</li>
-      <li>Clean and structured code</li>
-      <li>User-friendly UI design</li>
-    </ul>
-  </div>
-
-  <!-- CERTIFICATIONS -->
-  <div class="section" id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>AWS Cloud Basics</li>
-      <li>Web Development Fundamentals</li>
-      <li>HTML & CSS Certification</li>
-      <li>GitHub Basics</li>
-      <li>Cloud Computing Introduction</li>
-      <li>Soft Skills Training</li>
-    </ul>
-  </div>
+  <footer>
+    Company Name: <span>IMTDA Infotech Private Limited</span>
+  </footer>
 
 </div>
+
+<script>
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.menu button').forEach(b => {
+    b.classList.remove('active');
+  });
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
+
