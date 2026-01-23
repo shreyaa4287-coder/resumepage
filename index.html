@@ -2,120 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shreya M | Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-
-    body { background: #f0f0ff; color: #1f2937; }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #ff6f91, #6c5ce7);
-      text-align: center;
-      padding: 50px 20px 20px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      object-fit: cover;
-      margin-bottom: 20px;
-      transition: transform 0.3s;
-    }
-
-    header img:hover { transform: scale(1.05); }
-
-    header h1 { font-size: 2.2rem; color: #fff; margin-bottom: 10px; }
-    header p { font-size: 1.1rem; color: #fff; max-width: 600px; line-height: 1.5; }
-
-    /* Layout */
-    .container { display: flex; max-width: 1100px; margin: 30px auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-
-    .sidebar {
-      background: #f9f5f8;
-      width: 250px;
-      padding: 30px 20px;
-      border-right: 1px solid #e0e0e0;
-    }
-
-    .sidebar h2 { font-size: 1.3rem; color: #ff6f91; margin-bottom: 15px; }
-    .sidebar button {
-      display: block;
-      width: 100%;
-      padding: 12px 15px;
-      margin-bottom: 10px;
-      border: none;
-      background: #fff;
-      text-align: left;
-      border-radius: 8px;
-      font-size: 1rem;
-      color: #6c5ce7;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .sidebar button:hover, .sidebar button.active { background: #ff6f91; color: #fff; }
-
-    .content {
-      flex: 1;
-      padding: 40px 30px;
-    }
-
-    .content h2 { color: #ff6f91; font-size: 1.8rem; margin-bottom: 15px; border-bottom: 2px solid #ff6f91; display: inline-block; padding-bottom: 5px; }
-    .content ul { list-style: disc; padding-left: 20px; margin-top: 10px; }
-    .content li { margin-bottom: 8px; font-size: 1em; }
-
-    .tag {
-      display: inline-block;
-      background: #6c5ce7;
-      color: #fff;
-      padding: 6px 12px;
-      margin: 6px 6px 0 0;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      transition: background 0.3s;
-    }
-    .tag:hover { background: #ff6f91; }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f1f5f9;
-      font-size: 0.95rem;
-      color: #6b7280;
-    }
-    footer a { color: #ff6f91; text-decoration: none; font-weight: 500; }
-    footer a:hover { text-decoration: underline; }
-
-    /* Responsive */
-    @media(max-width: 900px) {
-      .container { flex-direction: column; }
-      .sidebar { width: 100%; border-right: none; display: flex; overflow-x: auto; }
-      .sidebar button { flex: 1; margin-right: 5px; margin-bottom: 0; white-space: nowrap; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <img src="https://via.placeholder.com/150" alt="Shreya M">
+  <!-- Header -->
+  <header class="header">
     <h1>Shreya M</h1>
-    <p>Aspiring Software Developer | BCA Student | Passionate About Web Development & Cloud Computing</p>
+    <p>Aspiring Software Developer | BCA Student</p>
   </header>
 
-  <div class="container">
+  <!-- Main Layout -->
+  <div class="main">
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <h2>Sections</h2>
-      <button class="active" onclick="showSection('skills')">Skills</button>
+      <button onclick="showSection('skills')">Skills</button>
       <button onclick="showSection('education')">Education</button>
       <button onclick="showSection('internship')">Internship</button>
       <button onclick="showSection('projects')">Projects</button>
@@ -124,68 +27,66 @@
 
     <!-- Content -->
     <div class="content">
-      <div id="skills">
+
+      <div id="skills" class="section active">
         <h2>Skills</h2>
-        <div class="tag">HTML</div>
-        <div class="tag">CSS</div>
-        <div class="tag">JavaScript</div>
-        <div class="tag">Python</div>
-        <div class="tag">AWS</div>
-        <div class="tag">Bootstrap</div>
+        <ul class="line-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>AWS</li>
+          <li>Bootstrap</li>
+        </ul>
       </div>
 
-      <div id="education" style="display:none;">
+      <div id="education" class="section">
         <h2>Education</h2>
-        <ul>
-          <li>BCA, [Your College Name], 2026</li>
-          <li>12th, [Your School Name], 2023</li>
-          <li>10th, [Your School Name], 2021</li>
+        <ul class="line-list">
+          <li>BCA – 5th Semester</li>
+          <li>NEP (2023–2026)</li>
         </ul>
       </div>
 
-      <div id="internship" style="display:none;">
+      <div id="internship" class="section">
         <h2>Internship</h2>
-        <ul>
-          <li>IMTDA Infotech Private Limited – Assisted in web development projects using HTML, CSS, JavaScript, and Python</li>
+        <ul class="line-list">
+          <li>IMTDA Infotech Private Limited</li>
+          <li>Web Development Intern</li>
         </ul>
       </div>
 
-      <div id="projects" style="display:none;">
+      <div id="projects" class="section">
         <h2>Projects</h2>
-        <ul>
-          <li>Portfolio Webpage – HTML, CSS, JavaScript</li>
-          <li>Python Mini Projects – Calculator, To-Do App</li>
+        <ul class="line-list">
+          <li>Resume Webpage</li>
+          <li>Welcome Page using JavaScript</li>
         </ul>
       </div>
 
-      <div id="certifications" style="display:none;">
+      <div id="certifications" class="section">
         <h2>Certifications</h2>
-        <ul>
-          <li>Introduction to AWS Cloud Computing</li>
-          <li>Web Development Fundamentals</li>
-          <li>Python Programming Essentials</li>
+        <ul class="line-list">
+          <li>AWS Cloud Basics</li>
         </ul>
       </div>
+
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
-    Company: <a href="https://www.imtda.com" target="_blank">IMTDA Infotech Private Limited</a>
+    Company: IMTDA Infotech Private Limited
   </footer>
 
-<script>
-  function showSection(id) {
-    const sections = ['skills','education','internship','projects','certifications'];
-    sections.forEach(sec => {
-      document.getElementById(sec).style.display = (sec===id) ? 'block' : 'none';
-    });
-
-    // Active button highlight
-    const buttons = document.querySelectorAll('.sidebar button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`.sidebar button[onclick="showSection('${id}')"]`).classList.add('active');
-  }
-</script>
+  <!-- JavaScript -->
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
