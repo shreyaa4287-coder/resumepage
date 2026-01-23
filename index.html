@@ -1,231 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
+<div class="content">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-body{
-  background:linear-gradient(160deg,#020617,#0f172a);
-  color:#fff;
-}
-
-/* ===== HEADER ===== */
-header{
-  padding:70px 20px 40px;
-  text-align:center;
-}
-
-header h1{
-  font-size:42px;
-  color:#fb7185;
-}
-
-header p{
-  margin-top:8px;
-  font-size:18px;
-  color:#c7d2fe;
-}
-
-/* ===== BUTTON GRID ===== */
-.menu{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  padding:25px 20px;
-}
-
-.menu button{
-  padding:16px;
-  border:none;
-  border-radius:16px;
-  background:linear-gradient(135deg,#5b21b6,#7c3aed);
-  color:white;
-  font-size:16px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.menu button:hover{
-  transform:scale(1.03);
-  background:linear-gradient(135deg,#7c3aed,#a78bfa);
-}
-
-.menu button:last-child{
-  grid-column:span 2;
-}
-
-/* ===== ACCORDION CARD ===== */
-.card{
-  margin:15px;
-  border-radius:20px;
-  background:#1e293b;
-  overflow:hidden;
-  box-shadow:0 15px 40px rgba(0,0,0,0.4);
-}
-
-.card-header{
-  padding:18px 22px;
-  cursor:pointer;
-  background:linear-gradient(135deg,#0f172a,#1e293b);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.card-header h2{
-  color:#fb7185;
-  font-size:20px;
-}
-
-.card-header span{
-  font-size:22px;
-  transition:0.3s;
-}
-
-.card.active .card-header span{
-  transform:rotate(90deg);
-}
-
-/* ===== CONTENT (NO GAP OPEN) ===== */
-.card-content{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height 0.4s ease;
-  padding:0 22px;
-}
-
-.card.active .card-content{
-  max-height:600px;
-  padding:20px 22px 25px;
-}
-
-.card-content p, 
-.card-content li{
-  color:#e5e7eb;
-  line-height:1.7;
-}
-
-.card-content ul{
-  padding-left:20px;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:20px;
-  color:#94a3b8;
-  font-size:14px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>Shreya M</h1>
-  <p>Software Developer | BCA Student</p>
-</header>
-
-<div class="menu">
-  <button onclick="toggleCard(0)">Profile</button>
-  <button onclick="toggleCard(1)">Internship</button>
-  <button onclick="toggleCard(2)">Certificates</button>
-  <button onclick="toggleCard(3)">Education</button>
-  <button onclick="toggleCard(4)">Contact</button>
-</div>
-
-<!-- ===== PROFILE ===== -->
-<div class="card">
-  <div class="card-header">
-    <h2>Profile</h2><span>▶</span>
+  <!-- SKILLS -->
+  <div class="section active" id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5 & CSS3 (Responsive Design)</li>
+      <li>Basic JavaScript (DOM)</li>
+      <li>Python Programming (Basics)</li>
+      <li>Git & GitHub Version Control</li>
+      <li>AWS Cloud Fundamentals</li>
+      <li>Logical Thinking & Problem Solving</li>
+    </ul>
   </div>
-  <div class="card-content">
-    <p>
-      I am a BCA student with interest in web development and software technologies.
-      I am motivated, adaptable, and eager to gain real-world experience.
-    </p>
-  </div>
-</div>
 
-<!-- ===== INTERNSHIP ===== -->
-<div class="card">
-  <div class="card-header">
-    <h2>Internship</h2><span>▶</span>
+  <!-- EDUCATION -->
+  <div class="section" id="education">
+    <h2>Education</h2>
+    <ul>
+      <li>Bachelor of Computer Applications (BCA)</li>
+      <li>Currently pursuing under NEP syllabus</li>
+      <li>Strong foundation in programming</li>
+      <li>Hands-on practical lab experience</li>
+      <li>Mini academic projects completed</li>
+      <li>Focused on software development skills</li>
+    </ul>
   </div>
-  <div class="card-content">
+
+  <!-- INTERNSHIP -->
+  <div class="section" id="internship">
+    <h2>Internship</h2>
     <ul>
       <li>Intern at IMTDA Infotech Private Limited</li>
-      <li>Worked on basic HTML & CSS projects</li>
-      <li>Learned professional work culture</li>
+      <li>Worked on resume & portfolio webpage</li>
+      <li>Practiced HTML and CSS layouts</li>
+      <li>Learned professional workflow</li>
+      <li>Improved teamwork and communication</li>
+      <li>Gained real-time industry exposure</li>
     </ul>
   </div>
-</div>
 
-<!-- ===== CERTIFICATES ===== -->
-<div class="card">
-  <div class="card-header">
-    <h2>Certificates</h2><span>▶</span>
-  </div>
-  <div class="card-content">
+  <!-- PROJECTS -->
+  <div class="section" id="projects">
+    <h2>Projects</h2>
     <ul>
-      <li>AWS Cloud Computing</li>
-      <li>Web Development Basics</li>
+      <li>Personal Resume Website</li>
+      <li>Portfolio Website using HTML & CSS</li>
+      <li>Responsive web pages</li>
+      <li>GitHub Pages hosting</li>
+      <li>Clean and structured code</li>
+      <li>User-friendly UI design</li>
     </ul>
   </div>
-</div>
 
-<!-- ===== EDUCATION ===== -->
-<div class="card">
-  <div class="card-header">
-    <h2>Education</h2><span>▶</span>
-  </div>
-  <div class="card-content">
+  <!-- CERTIFICATIONS -->
+  <div class="section" id="certifications">
+    <h2>Certifications</h2>
     <ul>
-      <li>BCA – Pursuing</li>
-      <li>PUC – Completed</li>
-      <li>SSLC – Completed</li>
+      <li>AWS Cloud Basics</li>
+      <li>Web Development Fundamentals</li>
+      <li>HTML & CSS Certification</li>
+      <li>GitHub Basics</li>
+      <li>Cloud Computing Introduction</li>
+      <li>Soft Skills Training</li>
     </ul>
   </div>
+
 </div>
-
-<!-- ===== CONTACT ===== -->
-<div class="card">
-  <div class="card-header">
-    <h2>Contact</h2><span>▶</span>
-  </div>
-  <div class="card-content">
-    <p>Email: yourmail@email.com</p>
-    <p>Phone: +91 XXXXXXXXXX</p>
-    <p>GitHub: github.com/yourusername</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
-  </div>
-</div>
-
-<footer>
-  Company Name: <b>IMTDA Infotech Private Limited</b>
-</footer>
-
-<script>
-function toggleCard(index){
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((card,i)=>{
-    if(i === index){
-      card.classList.toggle('active');
-    }else{
-      card.classList.remove('active');
-    }
-  });
-}
-</script>
-
-</body>
-</html>
