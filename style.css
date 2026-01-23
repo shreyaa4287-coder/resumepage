@@ -1,40 +1,124 @@
-.content{
-  padding:30px;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
+body{
+  background:linear-gradient(135deg,#020617,#1e1b4b);
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:70px 20px 50px;
+  background:linear-gradient(135deg,#ec4899,#8b5cf6);
+}
+
+header h1{
+  font-size:42px;
+}
+
+header p{
+  margin-top:10px;
+  font-size:18px;
+}
+
+/* MAIN */
+.main{
+  max-width:1100px;
+  margin:-40px auto 40px;
+  background:#0f172a;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(0,0,0,0.4);
+}
+
+/* MENU */
+.menu{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  background:#020617;
+}
+
+.menu button{
+  padding:18px;
+  border:none;
+  cursor:pointer;
+  color:#fff;
+  background:linear-gradient(135deg,#312e81,#4f46e5);
+  transition:0.3s;
+}
+
+.menu button:hover,
+.menu button.active{
+  background:linear-gradient(135deg,#ec4899,#f472b6);
+}
+
+/* CONTENT */
+.content{
+  padding:35px;
+}
+
+/* ACCORDION */
 .section{
-  display:none;
-  animation:fade 0.4s ease-in-out;
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(8px);
+  transition:
+    max-height 0.5s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .section.active{
-  display:block;
+  max-height:800px;
+  opacity:1;
+  transform:translateY(0);
 }
 
-.section h2{
-  color:#ff6ea8;
+/* BOX */
+.box{
+  background:linear-gradient(135deg,#111827,#1f2937);
+  padding:25px;
+  border-radius:18px;
+  border-left:6px solid #ec4899;
+}
+
+.box h2{
+  color:#f472b6;
   margin-bottom:15px;
 }
 
-.section ul{
+.box ul{
   padding-left:20px;
 }
 
-.section ul li{
+.box ul li{
   margin-bottom:10px;
-  line-height:1.6;
-  color:#374151;
+  line-height:1.7;
+  color:#e5e7eb;
 }
 
-@keyframes fade{
-  from{opacity:0; transform:translateY(5px);}
-  to{opacity:1; transform:translateY(0);}
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:18px;
+  background:#020617;
+  font-size:14px;
 }
-<script>
-function showSection(id){
-  document.querySelectorAll('.section').forEach(sec=>{
-    sec.classList.remove('active');
-  });
-  document.getElementById(id).classList.add('active');
+
+footer span{
+  color:#f472b6;
+  font-weight:600;
 }
-</script>
+
+/* MOBILE */
+@media(max-width:900px){
+  .menu{
+    grid-template-columns:1fr 1fr;
+  }
+}
